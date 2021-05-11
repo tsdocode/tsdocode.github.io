@@ -17,7 +17,7 @@ const config = {
   userTwitter: 'gatsbyjs', // Optionally renders "Follow Me" in the Bio segment.
   userGitHub: 'tsdocode', // Optionally renders "Follow Me" in the Bio segment.
   userLocation: 'Viet Nam', // User location to display in the author segment.
-  userAvatar: '/avt/avt.jpg', // User avatar to display in the author segment.
+  userAvatar: './avt/avt.jpg', // User avatar to display in the author segment.
   userDescription:
     "Love doing mad things", // User description to display in the author segment.
   copyright: 'Copyright © 2020. All rights reserved.', // Copyright string for the footer of the website and RSS feed.
