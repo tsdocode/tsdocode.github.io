@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+
+
 .post-meta {
     color: #757575;
     margin-bottom: 0.5rem;
@@ -12,3 +15,11 @@
     padding: 0;
     margin-top: 4rem;
 }
+
+.font {
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+.font *{
+    font-family: 'Source Sans Pro', sans-serif !important;
+  }

@@ -26,14 +26,14 @@ export default ({ data, pageContext }) => {
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div>
-          <h1>{post.title}</h1>
+          <h1 className={styles.font}>{post.title}</h1>
           <p className={styles.postMeta}>
             {date} &mdash; {postNode.timeToRead} Min Read{' '}
           </p>
           <div className={styles.postMeta}>
             <PostTags tags={post.tags} />
           </div>
-          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          <div className={styles.font} dangerouslySetInnerHTML={{ __html: postNode.html }} />
 
           <hr />
           <Bio config={config} />
