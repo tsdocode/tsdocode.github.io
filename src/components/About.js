@@ -1,9 +1,5 @@
 import React from 'react'
-
-const About = () => (
-  <>
-    <h1>Update Later</h1>
-  </>
-)
+const About = () => {
+}
 
 export default About

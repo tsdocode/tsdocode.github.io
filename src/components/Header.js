@@ -14,9 +14,9 @@ const Header = () => (
     <nav>
       <ul className={styles.mainNav}>
         <li>
-          <Link to="/about" activeClassName={styles.activeNav}>
-            About
-          </Link>
+          <a href="https://tsdocode.github.io/cv">
+          About
+          </a>
         </li>
         <Categories activeClassName={styles.activeNav} />
         <li>
@@ -24,6 +24,7 @@ const Header = () => (
             Contact
           </Link>
         </li>
+        
       </ul>
     </nav>
   </header>
