@@ -33,6 +33,7 @@ export default ({ data, pageContext }) => {
           <div className={styles.postMeta}>
             <PostTags tags={post.tags} />
           </div>
+          
           <div className={styles.font} dangerouslySetInnerHTML={{ __html: postNode.html }} />
 
           <hr />
