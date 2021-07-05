@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[tsdoblog]]></title><description><![CDATA[dssd]]></description><link>https://tsdocode.github.io/</link><image><url>https://tsdocode.github.io//logos/logo-48.png</url><title>tsdoblog</title><link>https://tsdocode.github.io/</link></image><generator>GatsbyJS Advanced Starter</generator><lastBuildDate>Mon, 05 Jul 2021 12:35:55 GMT</lastBuildDate><atom:link href="https://tsdocode.github.io//rss.xml" rel="self" type="application/rss+xml"/><copyright><![CDATA[Copyright © 2020. All rights reserved.]]></copyright><item><title><![CDATA[Reinforcement Learning Introduction]]></title><description><![CDATA[1. Giới thiệu Hôm nay mình sẽ bắt đầu nghiên cứu về một lĩnh vực khác của trí tuệ nhân tạo (AI), như tiêu đề đó là Reinforcement Learning…]]></description><link>https://tsdocode.github.io//reinforcement-learning-introduction</link><guid isPermaLink="false">https://tsdocode.github.io//reinforcement-learning-introduction</guid><category><![CDATA[reingorcement]]></category><category><![CDATA[ai]]></category><category><![CDATA[deeplearning]]></category><pubDate>Wed, 19 May 2021 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;1-giới-thiệu&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#1-gi%E1%BB%9Bi-thi%E1%BB%87u&quot; aria-label=&quot;1 giới thiệu permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;1. Giới thiệu&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Hôm nay mình sẽ bắt đầu nghiên cứu về một lĩnh vực khác của trí tuệ nhân tạo (AI), như tiêu đề đó là Reinforcement Learning (Học cũng cố).
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/14c8ca674603db39b5ca68b414907e79/27524/faces.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 92%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABJ0AAASdAHeZh94AAAC3klEQVQ4y2VUaVMaQRDl//8Dv+WDpqKVqwLRIBhQEBFYdoFlWblvPPACBeXwpd/EWdekq6Z2avp63a+3Ay8vL+Ch+O+Uu7s7dLtdjEYjDIdDdb+6uvL02t7vH/Ar/Xc6Dvp91Ot1OTW0Wi247hn6/QHOz8/x/Pz8X2BKwB9sPp9jPB6j0+moQLzf3t5ivV4r/cPDA66vrz09k97f378LHNDBJpOJKm2xWChDfnUQBr65uVFntVqpd9o8PT2pt8vLSy+oQkj4VGhhAAqRMVHFdWHk8+pdl0qkGvnj46OHNKCVnU77tfkj1SNmr1arKBYKsAwDVi6HgtztUkmRRR+SRHQkrNPpvpXMzINBXxnUajWUyw7ygsgs2Sg6DtzQd1R3tuCcpGAJMYZpSnBL7MrovU5Bt9vDcrn8G1DDJwHz2QxtyZY9OkRjZxNnP77ATh3CSR3B/fUDzY8fUIyEUZSk8/lM+bKvRM2qvJLb7bZ6oDSaTRQtQZCIIxU5Rmg/j+CBgfhBFlZ4H+W8gYJtYyH9JCC2qNfrvc0hS+YYaCKcSgW2lFQwDZye5LH1KY2NjRhCoRxM6adtmbAyp2oCKOxjo9F4I4UMkynNdF3QmrtBVXLt2zaKRkZKPkT986Z6q25vCtI9LJYrTKcTOVPlywnwSBkOBkJIHSVh8TiVQiyyDzeThp1MwAnvorL3E87vKCq5LDLRCI5iMVSFQFZDUvgHcXa9kskWe0El+0EGE+k0ysUCantB1IJfcSYsn5oW0pkshmI3luEeic9AwLSkqrWQowIS8mQy9QZbl96QviaTSRzE4whHo0jIPS89XAoSsqqHnCyTWNVD/euxsRwbzbp+J/OOoLVk9vybhkk5d9RzsPWvGvBvGQZi+RxwGjHBxcXFuyAMSrumjBZtqdfB3q0vLczKFnAM6EhjvQCIhkdvIv8K85YD6/cf/cPzTjRcVa4sB55Wq60QzeRv0oj+9f8Dw3M+Hq3POBIAAAAASUVORK5CYII=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;faces&quot;
+        title=&quot;faces&quot;
+        src=&quot;/static/14c8ca674603db39b5ca68b414907e79/e17e5/faces.png&quot;
+        srcset=&quot;/static/14c8ca674603db39b5ca68b414907e79/7e516/faces.png 100w,
+/static/14c8ca674603db39b5ca68b414907e79/772e8/faces.png 200w,
+/static/14c8ca674603db39b5ca68b414907e79/e17e5/faces.png 400w,
+/static/14c8ca674603db39b5ca68b414907e79/0a47e/faces.png 600w,
+/static/14c8ca674603db39b5ca68b414907e79/27524/faces.png 646w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nhắc lại một tí về &lt;strong&gt;machine learning&lt;/strong&gt;, chúng ta có thể phân chia các thuật toán machine learning thành 3 dạng chính:
+&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 400px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/a6897811ee8fcd663d6cbd2bba4c2587/c7dcc/ml.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 89.99999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAASCAYAAABb0P4QAAAACXBIWXMAABJ0AAASdAHeZh94AAACUElEQVQ4y22U6ZLiMAyE8/6vw4+dRwCWowoo7jMcCQk3hCsBrT7vOhOyoyqXjbHa3S3Fzvv9FgaRXb9eLzmfzxKGoazXazOCIJDj8ShxHIuNfK6T3bBxOp1kuVwasOv1Ks/n04zb7Sbb7VYWi4WZfwJ18mCz2Uw6nY54nmcAYcUFl8tFNptNyngwGEi/30/ZWgwnK5NDw+FQHo+HkcxgTWKr1TIWcDZJEgOEimazaX6nDC3YarUyYHkvYQQQkmFt/+Mywvd9Q+RDMoeRmY8oiow8G4fDQXa73X/nIMJ/RrK5RZOgv1SzS+Wy/NbBzXgXqXeJynuqdOQHwVpGClCpVKRarUmn3TaXjMfjb8DRaPT3dq1cqViUoo79fi+uOxN3PpdA99cqHcnI87yV1GpVKZdKWkQ3VZhKBh2vskFFe5oc6SyBrxuhxPe7jCeT1EsbMG8rU4pjAOkrJNuwDRzd7rKbTuRdKUlSLkqkNuxUSayMyLHVRR0qqbxj2QBIr1E9GBCJrhcqOdbmViNlqWuam8ASPAaUDqF4SE8BAYMZjU2b2ODQzHVlovunzD5sOMvldAO5aVHYsB5i+nQ6NZcwqCDs5wrK52b32aMQ9pu3n+JHY3MrTAG5awGO6o3n+WbNfySRDAHOWRKAWz9TQJIAxaMwDP7JemqvVeXr65cUCgWp1+tpdfGPwgHK/OPjwK14AnDWRxIOWgTLghlWnLVSPx6H7AYMaQn8wehsv1lm3W7X9C7r/Lfv5B9YO9NbJDYaDQPe6/XMy8KrQ4tkX5hs3h8wYGDaStSAWAAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        alt=&quot;ml&quot;
+        title=&quot;ml&quot;
+        src=&quot;/static/a6897811ee8fcd663d6cbd2bba4c2587/e17e5/ml.png&quot;
+        srcset=&quot;/static/a6897811ee8fcd663d6cbd2bba4c2587/7e516/ml.png 100w,
+/static/a6897811ee8fcd663d6cbd2bba4c2587/772e8/ml.png 200w,
+/static/a6897811ee8fcd663d6cbd2bba4c2587/e17e5/ml.png 400w,
+/static/a6897811ee8fcd663d6cbd2bba4c2587/0a47e/ml.png 600w,
+/static/a6897811ee8fcd663d6cbd2bba4c2587/c7dcc/ml.png 641w&quot;
+        sizes=&quot;(max-width: 400px) 100vw, 400px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
+      /&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Supervised learning&lt;/strong&gt;(Học có giám sát): Nhóm các thuật toán dự đoán đầu ra (outcome) từ dữ liệu (income) dựa trên bộ dữ liệu (income, outcome) cho trước:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dự đoán giá nhà : income = diện tích , outcome = giá&lt;/li&gt;
+&lt;li&gt;Nhận diễn chữ viết tay: income = ảnh , outcome = số báo nhiêu&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Unsupervised learning&lt;/strong&gt;(Học không giám sát): Nhóm các thuật toán học cấu trúc của dữ liệu income từ đó suy ra outcome (không biết trước outcome):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Phân loại khác hàng: Income = {giá hàng hóa khác mua, tỉ lệ quay lại mua hàng}  outcome = Nhóm khách hàng(tiềm năng, không tiềm năng)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Reinforcement learning&lt;/strong&gt; (Học cũng cố - RL): Chúng ta có thể mô tả RL một cách đơn giản : &lt;strong&gt;&quot;Trial - Error&quot;,&lt;/strong&gt; dễ hiểu hơn ta có thể liên tưởng đến câu nói &quot;Còn chơi là con gỡ&quot;. RL liên tục thử các hành động (action) để tiềm ra action tối ưu nhất để giải quyết vấn đề. Ta sẽ nói rõ hơn ở các bài sau &lt;/p&gt;
+&lt;h1 id=&quot;2-ứng-dụng-của-reinforcement-learning&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#2-%E1%BB%A9ng-d%E1%BB%A5ng-c%E1%BB%A7a-reinforcement-learning&quot; aria-label=&quot;2 ứng dụng của reinforcement learning permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;2. Ứng dụng của Reinforcement Learning&lt;/h1&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Nhắc đến RF thường thì người ta sẽ nhắc ngay đến Robot: Như Robot dẫn đường , Robot chăm sóc người bệnh,...&lt;/li&gt;
+&lt;li&gt;RF còn có thể áp dụng để huấn luyện máy tính chơi, giải các trò chơi như cờ vua, cờ tướng, mario,..&lt;/li&gt;
+&lt;li&gt;Ngoài ra RF còn được áp dụng trong nhiều lĩnh vực khác như Trading, Engineering, NLP,... &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;3-tổng-kết&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#3-t%E1%BB%95ng-k%E1%BA%BFt&quot; aria-label=&quot;3 tổng kết permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;3. Tổng kết&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;OK bây giờ chúng ta đã có một cái nhìn sơ lược về deeplearning. Từ bài sau chúng ta sẽ đi thẳng vào RF nhé.&lt;/li&gt;
+&lt;/ul&gt;</content:encoded><author>hcmute.ts@hotmail.com</author></item></channel></rss>
