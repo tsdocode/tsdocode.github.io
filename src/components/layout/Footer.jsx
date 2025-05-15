@@ -8,9 +8,16 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and tag line */}
-          <div className="mb-4 md:mb-0">
+          <div className="mb-4 md:mb-0 flex items-center">
+            <div className="w-6 h-6 mr-2 rounded-full bg-blue-500 flex items-center justify-center">
+              <svg width="16" height="16" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 10L7 16L12 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M20 10L25 16L20 22" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M17 8L15 24" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
             <Link to="/" className="text-xl font-bold">tsdocode</Link>
-            <p className="mt-1 text-sm text-neutral-400">
+            <p className="mt-1 text-sm text-neutral-400 ml-2">
               A young guy who loves tech
             </p>
           </div>

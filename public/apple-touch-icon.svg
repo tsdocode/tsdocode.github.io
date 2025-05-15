@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180" fill="none">
+  <!-- Background -->
+  <rect width="180" height="180" rx="60" fill="#3B82F6" />
+  
+  <!-- Code Symbol (centered and proportionally sized) -->
+  <g transform="translate(45, 45) scale(2.8)">
+    <path d="M12 10L7 16L12 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M20 10L25 16L20 22" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <path d="M17 8L15 24" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+</svg> 
