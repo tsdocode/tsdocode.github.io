@@ -31,7 +31,7 @@ export default function MetricsStrip() {
   const inView = useInView(ref, { once: true, margin: '-60px' })
 
   return (
-    <section ref={ref} className="border-y border-neutral-100 bg-white py-10 px-6">
+    <section id="metrics" ref={ref} className="border-y border-neutral-100 bg-white py-10 px-6">
       <div className="max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x divide-neutral-100">
         {metrics.map((m, i) => (
           <motion.div

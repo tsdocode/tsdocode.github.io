@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const SECTION_IDS = ['hero', 'about', 'experience', 'oss']
+const SECTION_IDS = ['hero', 'metrics', 'about', 'experience', 'oss']
 
 // How far past a section boundary (px) before we snap to the next one.
 // Larger = more forgiving for tall sections.
