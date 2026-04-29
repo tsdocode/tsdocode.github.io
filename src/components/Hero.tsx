@@ -60,7 +60,7 @@ export default function Hero() {
   const role = useTypingEffect(ROLES)
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Subtle grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
