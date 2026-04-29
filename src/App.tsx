@@ -2,6 +2,7 @@ import Nav from './components/Nav'
 import TOC from './components/TOC'
 import Cursor from './components/Cursor'
 import Hero from './components/Hero'
+import MetricsStrip from './components/MetricsStrip'
 import About from './components/About'
 import Experience from './components/Experience'
 import OpenSource from './components/OpenSource'
@@ -18,6 +19,7 @@ export default function App() {
       <TOC />
       <main>
         <Hero />
+        <MetricsStrip />
         <About />
         <Experience />
         <OpenSource />
