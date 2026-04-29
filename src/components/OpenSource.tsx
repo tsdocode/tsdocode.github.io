@@ -14,6 +14,7 @@ interface Contribution {
   metricLabel: string
   description: string
   role: 'Author' | 'Contributor'
+  tags?: string[]
 }
 
 const contributions: Contribution[] = [
@@ -25,8 +26,9 @@ const contributions: Contribution[] = [
     metric: '16×',
     metricLabel: 'throughput boost',
     description:
-      'Real-time TTS serving for large-scale deployment via efficient batching and KV cache optimization, achieving ~3× latency speedup and up to 16× throughput improvement.',
+      'Real-time TTS Inference Optimization using vLLM + Streaming. Optimized large-scale TTS inference via efficient batching and KV cache — achieving ~3× latency reduction, up to 16× throughput improvement, with streaming inference support for real-time voice agents.',
     role: 'Author',
+    tags: ['vLLM', 'KV Cache', 'Batching', 'CUDA Graphs', 'Streaming'],
   },
   {
     repo: 'nanoVLM',
@@ -119,6 +121,17 @@ function OSSCard({ contribution, index }: { contribution: Contribution; index: n
       <p className="text-sm text-neutral-500 leading-relaxed flex-1 mb-5">
         {contribution.description}
       </p>
+
+      {/* Tech tags */}
+      {contribution.tags && (
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {contribution.tags.map(tag => (
+            <span key={tag} className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-neutral-100 text-neutral-500">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Links */}
       <div className="flex flex-wrap gap-2 mt-auto">

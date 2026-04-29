@@ -1,33 +1,41 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 
+const ease = [0.25, 0.46, 0.45, 0.94] as const
+
 const skills: { category: string; items: string[] }[] = [
   {
     category: 'ML / Speech',
     items: ['TTS', 'ASR', 'Transformers', 'VITS', 'F5-TTS', 'CosyVoice'],
   },
   {
-    category: 'Frameworks',
-    items: ['PyTorch', 'Hugging Face', 'vLLM', 'Ray'],
+    category: 'Inference & Optimization',
+    items: ['TensorRT', 'CUDA Graphs', 'vLLM', 'KV Cache', 'Batching', 'torch.compile'],
   },
   {
-    category: 'Inference & Perf',
-    items: ['Triton Server', 'TensorRT', 'CUDA Graphs', 'torch.compile'],
+    category: 'Systems & Infra',
+    items: ['Triton Server', 'Ray', 'Docker', 'Kubernetes', 'GCP'],
   },
   {
-    category: 'Infrastructure',
-    items: ['Docker', 'Kubernetes', 'GCP'],
+    category: 'Programming',
+    items: ['Python', 'PyTorch', 'Hugging Face'],
   },
 ]
 
 const categoryColors: Record<string, string> = {
   'ML / Speech': 'bg-blue-50 text-blue-700 border-blue-100',
-  'Frameworks': 'bg-violet-50 text-violet-700 border-violet-100',
-  'Inference & Perf': 'bg-orange-50 text-orange-700 border-orange-100',
-  'Infrastructure': 'bg-emerald-50 text-emerald-700 border-emerald-100',
+  'Inference & Optimization': 'bg-orange-50 text-orange-700 border-orange-100',
+  'Systems & Infra': 'bg-emerald-50 text-emerald-700 border-emerald-100',
+  'Programming': 'bg-violet-50 text-violet-700 border-violet-100',
 }
 
-const ease = [0.25, 0.46, 0.45, 0.94] as const
+const interests = [
+  'Real-time AI systems',
+  'Efficient inference (batching, KV cache, CUDA optimization)',
+  'Voice agents & conversational AI',
+]
+
+const pipeline = ['Data', 'Training', 'Inference', 'Deployment']
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 32 },
@@ -74,20 +82,46 @@ export default function About() {
             style={{ transitionDelay: '0.1s' }}
           >
             <p className="text-neutral-600 leading-relaxed text-base mb-5">
-              I'm a Senior AI Engineer with a deep focus on speech synthesis and
-              real-time voice agent systems. I've spent the last several years
-              training TTS models, building large-scale speech datasets, and
-              deploying low-latency voice infrastructure.
+              I'm an AI Engineer focused on building{' '}
+              <strong className="font-semibold text-neutral-800">real-time speech systems</strong>{' '}
+              and optimizing model inference for production.
             </p>
-            <p className="text-neutral-600 leading-relaxed text-base mb-5">
-              My work spans the full ML lifecycle — from raw audio crawling and
-              preprocessing to model training, evaluation, and production
-              optimization with TensorRT and Triton Server.
+            <p className="text-neutral-600 leading-relaxed text-base mb-6">
+              My work spans the full pipeline:
             </p>
-            <p className="text-neutral-600 leading-relaxed text-base">
-              I contribute to open-source speech projects and enjoy pushing the
-              boundaries of what's possible in real-time voice AI.
+
+            {/* Pipeline visual */}
+            <div className="flex items-center gap-0 mb-7">
+              {pipeline.map((step, i) => (
+                <div key={step} className="flex items-center">
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-neutral-100 text-neutral-700">
+                    {step}
+                  </span>
+                  {i < pipeline.length - 1 && (
+                    <span className="mx-1 text-neutral-300 text-xs">→</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <p className="text-neutral-600 leading-relaxed text-base mb-6">
+              I have experience designing and scaling{' '}
+              <strong className="font-semibold text-neutral-800">low-latency voice systems</strong>,
+              improving both model quality and system performance in production environments.
             </p>
+
+            {/* Interests */}
+            <p className="text-xs font-semibold tracking-widest text-neutral-400 uppercase mb-3">
+              Particularly interested in
+            </p>
+            <ul className="space-y-1.5">
+              {interests.map(item => (
+                <li key={item} className="flex items-start gap-2 text-sm text-neutral-500">
+                  <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 flex-shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           {/* Skills */}
@@ -121,6 +155,17 @@ export default function About() {
             ))}
           </div>
         </div>
+
+        {/* Bottom tagline */}
+        <motion.p
+          variants={sectionVariants}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          style={{ transitionDelay: '0.5s' }}
+          className="mt-16 pt-10 border-t border-neutral-100 text-neutral-400 text-sm italic text-center"
+        >
+          "I build real-time AI systems that are fast, scalable, and production-ready."
+        </motion.p>
       </div>
     </section>
   )

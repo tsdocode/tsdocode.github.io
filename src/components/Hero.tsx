@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from 'react-icons/fi'
 
 const ROLES = [
-  'Senior AI Engineer',
-  'TTS Specialist',
-  'Voice AI Builder',
-  'MLOps Engineer',
+  'Real-time Inference Engineer',
+  'TTS & Voice AI Specialist',
+  'GPU Optimization Engineer',
+  'ML Systems Engineer',
 ]
 
 function useTypingEffect(words: string[], speed = 80, pause = 1800) {
@@ -106,11 +106,31 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-neutral-500 text-base max-w-xl leading-relaxed mb-10"
+          className="text-neutral-600 text-lg max-w-xl leading-relaxed mb-5"
         >
-          I build speech synthesis systems and real-time voice AI infrastructure —
-          from raw audio datasets to production-grade inference at scale.
+          Senior AI Engineer building real-time voice systems at scale.
+          <br />
+          <span className="text-neutral-400 text-base">
+            I specialize in low-latency inference, GPU optimization, and production-ready speech pipelines.
+          </span>
         </motion.p>
+
+        {/* Impact bullets */}
+        <motion.ul variants={itemVariants} className="mb-10 space-y-2">
+          {[
+            '2× lower latency, 4× higher throughput — TensorRT + CUDA Graphs',
+            'Serving 1B+ parameter TTS models in real-time',
+            'Scalable voice systems with Triton, vLLM, Ray',
+          ].map(line => (
+            <li key={line} className="flex items-start gap-2.5 text-sm text-neutral-500">
+              <span className="mt-1.5 w-1 h-1 rounded-full bg-neutral-400 flex-shrink-0" />
+              <span dangerouslySetInnerHTML={{
+                __html: line.replace(/(2×|4×|1B\+|TensorRT|CUDA Graphs|Triton|vLLM|Ray)/g,
+                  '<strong class="font-semibold text-neutral-700">$1</strong>')
+              }} />
+            </li>
+          ))}
+        </motion.ul>
 
         {/* CTAs */}
         <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-16">
